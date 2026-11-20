@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | EduManage</title>
+</head>
+<body data-nav="dashboard" class="dash-page">
+<div class="d-flex min-vh-100">
+    <aside th:replace="~{fragments/layout :: sidebar}"></aside>
+
+    <div class="flex-grow-1 d-flex flex-column min-w-0">
+        <nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+        <main class="dash-main flex-grow-1">
+            <div class="head d-flex align-items-center justify-content-between mb-4">
+                <h1 class="dash-title mb-0">Dashboard</h1>
+                <a class="btn btn-primary" th:href="@{/enroll-course}">Enroll a student</a>
+            </div>
+
+            <div class="card stats p-3 mb-4">
+                <div class="row text-center g-3">
+                    <div class="col-6 col-md-3"><span>Students</span><b class="d-block fs-4">1,215</b></div>
+                    <div class="col-6 col-md-3"><span>Active courses</span><b class="d-block fs-4">42</b></div>
+                    <div class="col-6 col-md-3"><span>Enrollments</span><b class="d-block fs-4">3,906</b></div>
+                    <div class="col-6 col-md-3"><span>Programs</span><b class="d-block fs-4">8</b></div>
+                </div>
+            </div>
+
+            <div class="card p-3 mb-4">
+                <h2 class="h5 mb-3">Recent enrollments</h2>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle mb-0">
+                        <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Course</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Ananya Das</td>
+                            <td>BCA101 Programming in Java</td>
+                            <td>04 Nov 2026</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Rohan Mishra</td>
+                            <td>CSE101 Programming in C</td>
+                            <td>03 Nov 2026</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Priya Nayak</td>
+                            <td>MCA102 Advanced Algorithms</td>
+                            <td>02 Nov 2026</td>
+                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card p-3">
+                <h2 class="h5 mb-3">Students by program</h2>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle mb-0">
+                        <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Students</th>
+                            <th>Courses</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>B.Tech CSE</td>
+                            <td>410</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>B.Tech IT</td>
+                            <td>180</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>B.Tech ECE</td>
+                            <td>150</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>BCA</td>
+                            <td>260</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>B.Sc IT</td>
+                            <td>120</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>MCA</td>
+                            <td>95</td>
+                            <td>6</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="~{fragments/layout :: footer}"></footer>
+    </div>
+</div>
+
+<style>
+    body.dash-page {
+        background-color: #0e1522 !important;
+        color: #e6ebf4 !important;
+    }
+    .dash-main {
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 28px 32px;
+    }
+    .dash-page .card {
+        background-color: #151f31 !important;
+        border: 1px solid #26344d !important;
+        color: #e6ebf4 !important;
+        border-radius: 10px;
+    }
+    .dash-page h1,
+    .dash-page h2,
+    .dash-page .stats b {
+        color: #f1f5f9 !important;
+    }
+    .dash-page .stats span {
+        color: #9fb0c9 !important;
+    }
+    body.sb-sidenav-toggled #sidebar-wrapper {
+        display: none !important;
+    }
+</style>
+
+<th:block th:replace="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>
